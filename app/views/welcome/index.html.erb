@@ -1,0 +1,25 @@
+
+<h1>Hi MaMa Clock In/Out Challenge</h1>
+
+<%= form_for :clock_events, url: { controller:"clock_events", action: "new" } do |form| %>
+  <h2> Your name </h2>
+  <p>
+    <%= form.text_field(:first_name,value:'First Name')%>
+    <%= form.text_field(:last_name,value:'Last Name')%>
+  </p>
+  <br>
+  <p>
+    <%= form.radio_button(:clock_event,"IN") %> <%= form.label('Clock IN') %>
+    <%= form.radio_button(:clock_event,"OUT" ) %> <%= form.label('Clock OUT') %>
+  </p>
+  </br>
+
+  <p>
+    <%= form.submit('Submit Clock Event') %>
+  </p>
+
+<% end %>
+
+<form>
+
+</form>
