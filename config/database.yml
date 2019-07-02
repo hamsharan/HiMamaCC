@@ -45,6 +45,8 @@ test:
 # You can use this database configuration with:
 #
   production:
+    adapter: mysql2
+    encoding: utf8mb4
     url: <%= ENV['DATABASE_URL'] %>
 #
 # production:
