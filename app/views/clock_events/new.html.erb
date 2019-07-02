@@ -1,2 +1,9 @@
-<h1>ClockEvents#new</h1>
-<p>Find me in app/views/clock_events/new.html.erb</p>
+<h1>ClockEvents for <%="{#{@user.first_name}--#{@user.last_name}"%></h1>
+<% @clocked_events.each do |ce| %>
+<br>
+  <%= "#{ce.user.first_name} #{ce.user.last_name}" %>
+  <%= "#{ce.time}" %>
+  <%= "#{ce.clocktype}"%>
+</br>
+<% end %>
+<p></p>
