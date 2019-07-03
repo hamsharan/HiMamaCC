@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_07_01_042333) do
+  SET GLOBAL innodb_file_format=Barracuda;
+  SET GLOBAL innodb_file_per_table=ON;
+  innodb_large_prefix=1
   create_table "clock_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "clocktype"
     t.datetime "time"
