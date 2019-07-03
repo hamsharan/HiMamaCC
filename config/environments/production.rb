@@ -114,6 +114,6 @@ Rails.application.configure do
   # SET GLOBAL innodb_file_format=Barracuda
   # SET GLOBAL innodb_file_per_table=ON
   # ROW_FORMAT=DYNAMIC; -- or COMPRESSED (goes on end of CREATE)
-  config.active_record.DatabaseSelector.innodb_large_prefix=1
-  config.active_record.DatabaseSelector.innodb_file_format=Barracuda
+  # config.active_record.DatabaseSelector.innodb_large_prefix=1
+  # config.active_record.DatabaseSelector.innodb_file_format=Barracuda
 end
