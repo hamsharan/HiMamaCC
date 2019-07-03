@@ -8,7 +8,7 @@ ActiveSupport.on_load :active_record do
          yield td if block_given?
         end
       end
-      alias_method :create_table, :create_table_without_innodb_row_format
+      alias_method :create_table, :create_table_with_innodb_row_format
     end
   end
 end
