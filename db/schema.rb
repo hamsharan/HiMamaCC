@@ -11,10 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_07_01_042333) do
-  SET GLOBAL innodb_file_format=Barracuda;
-  SET GLOBAL innodb_file_per_table=ON;
-  innodb_large_prefix=1
-  create_table "clock_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "clock_events", options: "innodb_large_prefix=1 innodb_file_format=Barracuda ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "clocktype"
     t.datetime "time"
     t.bigint "user_id", null: false
@@ -23,9 +20,9 @@ ActiveRecord::Schema.define(version: 2019_07_01_042333) do
     t.index ["user_id"], name: "index_clock_events_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "first_name", VARCHAR(255)
-    t.string "last_name", VARCHAR(255)
+  create_table "users", options: "innodb_large_prefix=1 innodb_file_format=Barracuda ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "first_name", varchar(255)
+    t.string "last_name", varchar(255)
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
