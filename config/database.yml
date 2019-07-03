@@ -46,6 +46,9 @@ test:
 #
   production:
     adapter: mysql2
+    charset: latin1
+    encoding: latin1
+    collation: latin1_swedish_ci
     url: <%= ENV['DATABASE_URL'] %>
 #
 # production:
