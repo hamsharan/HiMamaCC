@@ -49,6 +49,7 @@ test:
     charset: latin1
     encoding: latin1
     collation: latin1_swedish_ci
+    innodb_large_prefix: 1
     url: <%= ENV['DATABASE_URL'] %>
 #
 # production:
