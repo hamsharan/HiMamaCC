@@ -90,6 +90,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
@@ -110,4 +111,10 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+  # SET GLOBAL innodb_file_format=Barracuda
+  # SET GLOBAL innodb_file_per_table=ON
+  # ROW_FORMAT=DYNAMIC; -- or COMPRESSED (goes on end of CREATE)
+  innodb_large_prefix=1
+  config.active_record.DatabaseSelector.innodb_large_prefix=1
+  config.active_record.DatabaseSelector.innodb_file_format=Barracuda
 end

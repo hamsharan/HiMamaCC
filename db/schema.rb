@@ -10,6 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+SET GLOBAL innodb_file_format=Barracuda;
+SET GLOBAL innodb_file_per_table=ON;
+ROW_FORMAT=DYNAMIC; -- or COMPRESSED (goes on end of CREATE)
+innodb_large_prefix=1
+
 ActiveRecord::Schema.define(version: 2019_07_01_042333) do
   create_table "clock_events", options: "innodb_large_prefix=1 innodb_file_format=Barracuda ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "clocktype"
