@@ -47,9 +47,9 @@ test:
   production:
     database: HiMaMaCC_production
     adapter: mysql2
-    encoding: latin1
-    charset: latin1
+    charset: utf8
     innodb_large_prefix: 1
+    encoding: utf8_unicode_ci
     url: <%= ENV['DATABASE_URL'] %>
 #
 # production:

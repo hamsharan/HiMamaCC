@@ -16,7 +16,7 @@
 # innodb_large_prefix=1
 
 ActiveRecord::Schema.define(version: 2019_07_01_042333) do
-  create_table "clock_events", options: "ENGINE=InnoDB ,ROW_FORMAT=DYNAMIC, DEFAULT CHARSET=latin1 , innodb_large_prefix=1, innodb_file_format=Barracuda", force: :cascade do |t|
+  create_table "clock_events", options: "ENGINE=InnoDB ,ROW_FORMAT=DYNAMIC, DEFAULT CHARSET=utf8 , innodb_large_prefix=1, innodb_file_format=Barracuda", force: :cascade do |t|
     t.string "clocktype"
     t.datetime "time"
     t.bigint "user_id", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_07_01_042333) do
     t.index ["user_id"], name: "index_clock_events_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB,  ROW_FORMAT=DYNAMIC, DEFAULT CHARSET=latin1 ,innodb_large_prefix=1,innodb_file_format=Barracuda", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB,  ROW_FORMAT=DYNAMIC, DEFAULT CHARSET=utf8 ,innodb_large_prefix=1,innodb_file_format=Barracuda", force: :cascade do |t|
     t.string "first_name", varchar(191)
     t.string "last_name", varchar(191)
     t.datetime "created_at", precision: 6, null: false
