@@ -5,7 +5,7 @@
 # https://github.com/rails/rails/issues/9855#issuecomment-57665404
 config = ActiveRecord::Base.configurations[Rails.env]
 
-if ENV['USE_UTF8MB4'] && config['adapter'] == 'mysql2'
+# if ENV['USE_UTF8MB4'] && config['adapter'] == 'mysql2'
   config['encoding'] = 'utf8mb4'
   config['collation'] = 'utf8mb4_bin'
 
@@ -28,5 +28,5 @@ if ENV['USE_UTF8MB4'] && config['adapter'] == 'mysql2'
         raise "Configure a supported :charset and ensure innodb_large_prefix is enabled to support indexes on varchar(255) string columns."
       end
     end
-  end
+  # end
 end
